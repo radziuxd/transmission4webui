@@ -25,67 +25,66 @@ if which whoami 2>/dev/null; then
 fi
 
 #==========================================================
-MSG_TR_WORK_FOLDER="Transmission Web Path: "
-MSG_SPECIFIED_VERSION="You are using the specified version to install, version:"
-MSG_SEARCHING_TR_FOLDER="Searching Transmission Web Folder..."
-MSG_THE_SPECIFIED_DIRECTORY_DOES_NOT_EXIST="Folder not found. Will search the entire /. This will take a while..."
-MSG_USE_WEB_HOME="Use TRANSMISSION_WEB_HOME Variable: $TRANSMISSION_WEB_HOME"
-MSG_AVAILABLE="Available"
-MSG_TRY_SPECIFIED_VERSION="Attempting to specify version: "
-MSG_PACK_COPYING="Copying installation package..."
-MSG_WEB_PATH_IS_MISSING="ERROR : Transmisson WEB UI Folder is missing, Please confirm Transmisson is installed."
-MSG_PACK_IS_EXIST=" Already exist, whether to download again? (y/n)"
-MSG_SIKP_DOWNLOAD="\nSkip download, preparing to install"
-MSG_DOWNLOADING="Transmission Web Control Is Downloading..."
-MSG_DOWNLOAD_COMPLETE="Download completed, ready to install..."
-MSG_DOWNLOAD_FAILED="The installation package failed to download. Please try again or try another version."
-MSG_INSTALL_COMPLETE="Transmission Web Control Installation Completed!"
-MSG_PACK_EXTRACTING="Extracting installation package..."
-MSG_PACK_CLEANING_UP="Cleaning up the installation package..."
-MSG_DONE="Installation completed. Installation problems see：https://github.com/ronggang/transmission-web-control/wiki "
-MSG_SETTING_PERMISSIONS="Setting permissions, It takes about one minute ..."
-MSG_BEGIN="BEGIN"
-MSG_END="END"
+MSG_TR_WORK_FOLDER="当前 Transmission Web 目录为: "
+MSG_SPECIFIED_VERSION="您正在使用指定版本安装，版本："
+MSG_SEARCHING_TR_FOLDER="正在搜索 Transmission Web 目录..."
+MSG_THE_SPECIFIED_DIRECTORY_DOES_NOT_EXIST="指定的目录不存在，准备进行搜索，请稍候..."
+MSG_USE_WEB_HOME="使用 TRANSMISSION_WEB_HOME 变量: $TRANSMISSION_WEB_HOME"
+MSG_AVAILABLE="可用"
+MSG_TRY_SPECIFIED_VERSION="正在尝试指定版本"
+MSG_PACK_COPYING="正在复制安装包..."
+MSG_WEB_PATH_IS_MISSING="错误 : Transmisson WEB 目录不存在，请确认是否已安装 Transmisson 。"
+MSG_PACK_IS_EXIST=" 已存在，是否重新下载？（y/n）"
+MSG_SIKP_DOWNLOAD="\n跳过下载，正在准备安装"
+MSG_DOWNLOADING="正在下载 Transmission Web Control..."
+MSG_DOWNLOAD_COMPLETE="下载完成，正在准备安装..."
+MSG_DOWNLOAD_FAILED="安装包下载失败，请重试或尝试其他版本。"
+MSG_INSTALL_COMPLETE="Transmission Web Control 安装完成!"
+MSG_PACK_EXTRACTING="正在解压安装包..."
+MSG_PACK_CLEANING_UP="正在清理安装包..."
+MSG_DONE="安装脚本执行完成。如遇到问题请查看：https://github.com/ronggang/transmission-web-control/wiki "
+MSG_SETTING_PERMISSIONS="正在设置权限，大约需要一分钟 ..."
+MSG_BEGIN="开始"
+MSG_END="结束"
 MSG_MAIN_MENU="
-	Welcome to the Transmission Web Control Installation Script.
-	Official help documentation: https://github.com/ronggang/transmission-web-control/wiki 
-	Installation script version: $SCRIPT_VERSION
+	欢迎使用 Transmission Web Control 中文安装脚本。
+	官方帮助文档：https://github.com/ronggang/transmission-web-control/wiki 
+	安装脚本版本：$SCRIPT_VERSION 
 
-	1. Install the latest release.
-	2. Install the specified version.
-	3. Revert to the official UI.
-	4. Re-download the installation script.
-	5. Check if Transmission is started.
-	6. Input the Transmission Web directory.
-	9. Installing from 'master' Repository.
+	1. 安装最新的发布版本（release）；
+	2. 安装指定版本，可用于降级；
+	3. 恢复到官方UI；
+	4. 重新下载安装脚本（$SCRIPT_NAME）；
+	5. 检测 Transmission 是否已启动；
+	6. 指定安装目录；
+	9. 安装最新代码库中的内容（master）；
 	===================
-	0. Exit the installation;
+	0. 退出安装；
 
-	Please enter the corresponding number: "
-MSG_INPUT_VERSION="Please enter the version number (e.g: 1.5.1):"
-MSG_INPUT_TR_FOLDER="Please enter the directory where the Transmission Web is located (without 'web', e.g /usr/share/transmission): "
-MSG_SPECIFIED_FOLDER="The installation directory is specified as: "
-MSG_INVALID_PATH="The input path is invalid."
-MSG_MASTER_INSTALL_CONFIRM="Do you confirm the installation? (y/n): "
-MSG_FIND_WEB_FOLDER_FROM_PROCESS="Attempting to identify transmission Web directory from process..."
-MSG_FIND_WEB_FOLDER_FROM_PROCESS_FAILED=" × Recognition failed, please confirm that transmission has started."
-MSG_CHECK_TR_DAEMON="Detecting the Transmission process..."
-MSG_CHECK_TR_DAEMON_FAILED="No Transmission was found in the system process. Please confirm that it is started."
-MSG_TRY_START_TR="Do you want to try to start transmission-daemon? (y/n) "
-MSG_TR_DAEMON_IS_STARTED="Transmission Is Started."
-MSG_REVERTING_ORIGINAL_UI="Restoring the official UI..."
-MSG_REVERT_COMPLETE="Restore complete, please re-enter http://ip:9091/ or refresh in the browser to view the official UI."
-MSG_ORIGINAL_UI_IS_MISSING="The official UI does not exist."
-MSG_DOWNLOADING_INSTALL_SCRIPT="Re-downloading the installation script..."
-MSG_INSTALL_SCRIPT_DOWNLOAD_COMPLETE="The download is complete. Please re-run the installation script."
-MSG_INSTALL_SCRIPT_DOWNLOAD_FAILED="Installation Script Download failed!"
-MSG_NON_ROOT_USER="Unable to confirm if it is currently root, the installation may not be possible. Do you want to continue? (y/n)"
+	请输入对应的数字："
+MSG_INPUT_VERSION="请输入版本号（如：1.5.1）："
+MSG_INPUT_TR_FOLDER="请输入 Transmission Web 所在的目录（不包含web，如：/usr/share/transmission）："
+MSG_SPECIFIED_FOLDER="安装目录已指定为："
+MSG_INVALID_PATH="输入的路径无效。"
+MSG_MASTER_INSTALL_CONFIRM="最新代码可能包含未知错误，是否确认安装？ (y/n): "
+MSG_FIND_WEB_FOLDER_FROM_PROCESS="正在尝试从进程中识别 Transmission Web 目录..."
+MSG_FIND_WEB_FOLDER_FROM_PROCESS_FAILED=" × 识别失败，请确认 Transmission 已启动。"
+MSG_CHECK_TR_DAEMON="正在检测 Transmission 进程..."
+MSG_CHECK_TR_DAEMON_FAILED="在系统进程中没有找到 Transmission ，请确认是否已启动。"
+MSG_TRY_START_TR="是否尝试启动 Transmission ？（y/n）"
+MSG_TR_DAEMON_IS_STARTED="Transmission 已启动。"
+MSG_REVERTING_ORIGINAL_UI="正在恢复官方UI..."
+MSG_REVERT_COMPLETE="恢复完成，在浏览器中重新访问 http://ip:9091/ 或刷新即可查看官方UI。"
+MSG_ORIGINAL_UI_IS_MISSING="官方UI不存在。"
+MSG_DOWNLOADING_INSTALL_SCRIPT="正在重新下载安装脚本..."
+MSG_INSTALL_SCRIPT_DOWNLOAD_COMPLETE="下载完成，请重新运行安装脚本。"
+MSG_INSTALL_SCRIPT_DOWNLOAD_FAILED="安装脚本下载失败！"
+MSG_NON_ROOT_USER="无法确认当前是否为 root 用户，可能无法进行安装操作。是否继续？（y/n）"
 #==========================================================
 
 # 是否自动安装
 if [ "$ARG1" = "auto" ]; then
 	AUTOINSTALL=1
-	ROOT_FOLDER=$2
 else
 	ROOT_FOLDER=$ARG1
 fi
@@ -95,18 +94,17 @@ initValues() {
 	if [ ! -d "$TMP_FOLDER" ]; then
 		mkdir -p "$TMP_FOLDER"
 	fi
-    
+
     # 判断是否指定了ROOT_FOLDER
     if [ "$ROOT_FOLDER" == "" ]; then
         # 获取 Transmission 目录
         getTransmissionPath
     fi
-    
 	# 判断 ROOT_FOLDER 是否为一个有效的目录，如果是则表明传递了一个有效路径
 	if [ -d "$ROOT_FOLDER" ]; then
-		showLog "$MSG_TR_WORK_FOLDER $ROOT_FOLDER/web"
+		showLog "$MSG_TR_WORK_FOLDER $ROOT_FOLDER/public_html"
 		INSTALL_TYPE=3
-		WEB_FOLDER="$ROOT_FOLDER/web"
+		WEB_FOLDER="$ROOT_FOLDER/public_html"
 		SKIP_SEARCH=1
 	fi
 
@@ -158,16 +156,16 @@ findWebFolder() {
       fi
 		INSTALL_TYPE=2
 	else
-		if [ -d "$ROOT_FOLDER" -a -d "$ROOT_FOLDER/web" ]; then
-			WEB_FOLDER="$ROOT_FOLDER/web"
+		if [ -d "$ROOT_FOLDER" -a -d "$ROOT_FOLDER/public_html" ]; then
+			WEB_FOLDER="$ROOT_FOLDER/public_html"
 			INSTALL_TYPE=1
-			showLog "$ROOT_FOLDER/web $MSG_AVAILABLE."
+			showLog "$ROOT_FOLDER/public_html $MSG_AVAILABLE."
 		else
 			showLog "$MSG_THE_SPECIFIED_DIRECTORY_DOES_NOT_EXIST"
-			ROOT_FOLDER=`find /usr /etc /home /root -name 'web' -type d 2>/dev/null| grep 'transmission/web' | sed 's/\/web$//g'`
+			ROOT_FOLDER=`find / -name 'web' -type d 2>/dev/null| grep 'transmission/public_html' | sed 's/\/public_html$//g'`
 
-			if [ -d "$ROOT_FOLDER/web" ]; then
-				WEB_FOLDER="$ROOT_FOLDER/web"
+			if [ -d "$ROOT_FOLDER/public_html" ]; then
+				WEB_FOLDER="$ROOT_FOLDER/public_html"
 				INSTALL_TYPE=1
 			fi
 		fi
@@ -251,8 +249,7 @@ download() {
 	fi
 	showLog "$MSG_DOWNLOADING"
 	echo ""
-	# 下载的时候强制命名文件，以免被重定向后文件名发生改变
-	wget "$DOWNLOAD_URL" -O "$PACK_NAME" --no-check-certificate
+	wget "$DOWNLOAD_URL" --no-check-certificate
 	# 判断是否下载成功
 	if [ $? -eq 0 ]; then
 		showLog "$MSG_DOWNLOAD_COMPLETE"
@@ -372,9 +369,9 @@ showMainMenu() {
 		6)
 			echo -n "$MSG_INPUT_TR_FOLDER"
 			read input
-			if [ -d "$input/web" ]; then
+			if [ -d "$input/public_html" ]; then
 				ROOT_FOLDER="$input"
-				showLog "$MSG_SPECIFIED_FOLDER $input/web"
+				showLog "$MSG_SPECIFIED_FOLDER $input/public_html"
 			else
 				showLog "$MSG_INVALID_PATH"
 			fi
@@ -405,19 +402,17 @@ getTransmissionPath() {
 	# 用户如知道自己的 Transmission Web 所在的目录，直接修改这个值，以避免搜索所有目录
 	# ROOT_FOLDER="/usr/local/transmission/share/transmission"
 	# Fedora 或 Debian 发行版的默认 ROOT_FOLDER 目录
-	if [ ! -d "$ROOT_FOLDER" ]; then
-		if [ -f "/etc/fedora-release" ] || [ -f "/etc/debian_version" ] || [ -f "/etc/openwrt_release" ]; then
-			ROOT_FOLDER="/usr/share/transmission"
-		fi
+	if [ -f "/etc/fedora-release" ] || [ -f "/etc/debian_version" ] || [ -f "/etc/openwrt_release" ]; then
+		ROOT_FOLDER="/usr/share/transmission"
+	fi
+	
+	if [ -f "/bin/freebsd-version" ]; then
+		ROOT_FOLDER="/usr/local/share/transmission"
+	fi
 
-		if [ -f "/bin/freebsd-version" ]; then
-			ROOT_FOLDER="/usr/local/share/transmission"
-		fi
-
-		# 群晖
-		if [ -f "/etc/synoinfo.conf" ]; then
-			ROOT_FOLDER="/var/packages/transmission/target/share/transmission"
-		fi
+	# 群晖
+	if [ -f "/etc/synoinfo.conf" ]; then
+		ROOT_FOLDER="/var/packages/transmission/target/share/transmission"
 	fi
 
 	if [ ! -d "$ROOT_FOLDER" ]; then
@@ -440,9 +435,7 @@ getTransmissionPath() {
 # 获取最后的发布版本号
 # 因在源码库里提交二进制文件不便于管理，以后将使用这种方式获取最新发布的版本
 getLatestReleases() {
-	# VERSION=`wget -O - https://api.github.com/repos/ronggang/transmission-web-control/releases/latest | grep tag_name | head -n 1 | cut -d '"' -f 4`
-	# 换为curl，避免OpenWRT下wget得到的内容没有分行，导致grep输出结果失效
-	VERSION=`curl -s https://api.github.com/repos/ronggang/transmission-web-control/releases/latest | grep tag_name | head -n 1 | cut -d '"' -f 4`
+	VERSION=`wget -O - https://api.github.com/repos/ronggang/transmission-web-control/releases/latest | grep tag_name | head -n 1 | cut -d '"' -f 4`
 }
 
 # 检测 Transmission 进程是否存在
